@@ -10,7 +10,12 @@ Please keep in mind that for this kata, we assume that empty arrays are not homo
     The resultant arrays should be in the order they were originally in and should not have its values changed.
     No implicit type casting is allowed. A subarray [1, '2'] would be considered illegal and should be filtered out.*/
 
-const testArray = [[1, 5, 4], ['a', 3, 5], ['b'], [], ['1', 2, 3]]
+const testArray = [
+    [1, 5, 4],
+    ['a', 3, 5],
+    ['b'], [],
+    ['1', 2, 3]
+]
 
 const filterHomogenous = arrays => arrays.filter(ar => ar.length > 0 && ar.every(i => typeof i === typeof ar[0]))
 
