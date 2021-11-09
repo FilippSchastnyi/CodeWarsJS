@@ -12,9 +12,6 @@ Please keep in mind that for this kata, we assume that empty arrays are not homo
 
 const testArray = [[1, 5, 4], ['a', 3, 5], ['b'], [], ['1', 2, 3]]
 
-const filterHomogenous = arrays => {
-    return  arrays.filter(array => {
-        if (array.length > 0) return array.every(item => typeof item === typeof array[0])
-})}
+const filterHomogenous = arrays => arrays.filter(ar => ar.length > 0 && ar.every(i => typeof i === typeof ar[0]))
 
 filterHomogenous(testArray)
