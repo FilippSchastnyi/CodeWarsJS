@@ -14,9 +14,9 @@ const trollString = "This website is for losers LOL!"
 const disemvowel = (str) => {
     const vowels = ['a', 'e', 'i', 'o', 'u'];
     return str.split('')
-              .filter(item => vowels.indexOf(item) === -1)
+              .filter(item => !vowels.includes(item.toLowerCase()))
               .join('')
 }
-
 disemvowel(trollString)
+
 
