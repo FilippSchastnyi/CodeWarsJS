@@ -4,7 +4,7 @@ const vowels = ["a", "e", "i", "o", "u"]
 function getCount(str) {
     let vowelsCount = 0;
 
-    str.split('').filter(item => vowels.includes(item) ? vowelsCount++ : null)
+    str.split('').filter(item => vowels.includes(item.toLowerCase()) ? vowelsCount++ : null)
 
     return vowelsCount;
 }
