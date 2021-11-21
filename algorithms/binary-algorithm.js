@@ -1,22 +1,16 @@
-const someArray = [0, 1, 4, 3, 5, 7, 9, 8, 2, 6]
+const arr = [1, 2, 3, 4, 5, 6, 7, 8]
 
-const searchFu = (nums, target) => {
-    let leftSide = 0;
-    let rightSide = nums.length - 1;
-    let mid;
+const searchEl = (arr, el) => {
+    let left = 0;
+    let right = arr.length
 
-    while (leftSide <= rightSide) {
-        mid = Math.round((rightSide - leftSide) / 2) + leftSide
-
-        if (target === nums[mid]) {
-            return mid
-        } else if (target < nums[mid]) {
-            rightSide = mid - 1
-        } else {
-            leftSide = mid + 1
-        }
+    while (right - left > 0) {
+        let mid = Math.floor((left + right) / 2)
+        if (arr[mid] === el) return mid
+        arr[mid] > el ? right = mid : left = mid
     }
     return -1
 }
 
-searchFu(someArray, 7)
+console.log(searchEl(arr, 1))
+
