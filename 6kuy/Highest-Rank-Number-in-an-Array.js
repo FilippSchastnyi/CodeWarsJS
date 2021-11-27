@@ -12,20 +12,18 @@ Complete the method which returns the number which is most frequent in the given
 const arrayData = [12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10]
 
 const highestRank = (array) => {
-    const store = {};
-    array.forEach(n => {
-        if (store[n]) store[n] += 1;
-        else store[n] = 1;
+    const store = {}
+    array.forEach(item => {
+        store[item] = item
     })
 
-    const maxRepeatCount = Math.max(...Object.values(store));
+    Object.keys(store).forEach(item => {
+        store[item] = array.filter(k => +item === k).length
+    })
 
-    let result = 0;
-    for (let key in store) {
-        if (store[key] === maxRepeatCount && key > result) result = +key;
-    }
+    return Object.entries(store).reduce((acc, current) => current[1] > acc[1] ? current : acc)[1]
 
-    return result;
 }
 
-highestRank(arrayData)
+console.log(highestRank(arrayData))
+
