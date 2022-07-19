@@ -19,8 +19,10 @@ const array = [
         name: 'Garu',
         id: 4
     },
-    ]
+]
 
-const raters = array.filter((rater, index, arr) => {
-   return  arr.findIndex(val => val.id === rater.id) === index
+
+const filteredArr = array.filter((item, index, arr) => {
+    return arr.findIndex((val) => {
+        return val.id === item.id}) === index
 })
